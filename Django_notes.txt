@@ -1,0 +1,30 @@
+
+django-admin startproject storefront [Project_Name] . // this point make the project in the actual folder and not create a new folder
+
+pipenv shell // activate the virtual environement
+
+pipenv --venv // give the path to virtual environement 
+
+pipenv install //create a new virtualenvironment and install all the dependancies of a project inside
+
+python manage.py runserver [port]
+
+python manage.py startapp [name]  // add a new app inside a django project
+
+python manage.py makemigrations  // go to different apps in django project and 
+                                    create a python script for all the models,it will be translated to sql script
+                                    once we want to run it against a database
+// F2 to change a variable ,const ..etc in VS code, Ctrl + N to look up names (methods, propreties, constant, variables ...etc)
+
+
+python manage.py migrate // run the migrations in order to create a DB schema
+
+python manage.py sqlmigrate [APP_NAME] [migration_number for example: 0003 (the third migration on the app we target)] // run the migrations in order to create a DB schema
+
+python manage.py migrate [APP_NAME] [migration_number] // revert migration to a precedent one
+
+pipenv install mysqlclient //install a pquage in order to connect django project to a mysql DB
+
+python manage.py makemigrations [App_Name] --empty // create an empty migration so we acan add a custom sql script inside
+
+python manage.py createsuperuser
