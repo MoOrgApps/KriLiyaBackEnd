@@ -28,13 +28,21 @@ class Customer(models.Model):
 
 
 class Rental(models.Model):
-    placed_at = models.DateTimeField()
+    placed_at = models.DateTimeField(auto_now=True)
+    start_date = models.DateTimeField(null=True)
+    end_date = models.DateTimeField(null=True)
     customer = models.ForeignKey(Customer, on_delete=models.PROTECT)
     rentedItem = models.ForeignKey('RentedItem', on_delete=models.PROTECT)
+    def __str__(self):
+        return f'{self.rentedItem} {self.customer}'
 
 
 class RentedItem(models.Model):
     # objects = TaggedItemManager()
-    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    content_type = models.ForeignKey(ContentType, on_delete=models.PROTECT)
     object_id = models.PositiveIntegerField()
     content_object = GenericForeignKey()
+    def __str__(self):
+        return f'{self.content_object}'
+    class Meta:
+        unique_together = ('content_type', 'object_id')

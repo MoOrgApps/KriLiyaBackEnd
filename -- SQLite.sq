@@ -1,0 +1,4 @@
+-- SQLite
+insert into cars_owner (id, name, adress, city)
+values  (1, 'Youssef', 'Marjane', 'Jadida'),
+        (2, 'YMohammed', 'Pie 11', 'Quebec');

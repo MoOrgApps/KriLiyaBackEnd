@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'genericRentalApp'
+    'genericRentalApp',
+    'cars'
 ]
 
 MIDDLEWARE = [
@@ -76,11 +77,8 @@ WSGI_APPLICATION = 'KriLiya.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'kriliya',
-        'HOST': 'localhost',
-        'USER': 'root',
-        'PASSWORD': 'abc123'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
