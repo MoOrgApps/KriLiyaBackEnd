@@ -17,7 +17,7 @@ class Car(models.Model):
     year = models.IntegerField()
     registration = models.CharField(max_length=255)
     fuel = models.CharField(max_length=1, choices=FUEL_CHOICES, default=FUEL_DIESEL)
-    owner = models.ForeignKey('Owner', on_delete=models.PROTECT)
+    owner = models.ForeignKey('Owner', null=True, on_delete=models.PROTECT)
 
     def __str__(self):
         return f'{self.car_make} {self.car_model} {self.owner}'
